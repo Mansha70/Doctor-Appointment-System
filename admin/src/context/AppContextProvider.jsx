@@ -2,7 +2,7 @@ import { AppContext } from './AppContext';
 
 export const AppContextProvider = (props) => {
  const currency='$'
-   const backendUrl = import.meta.env.VITE_BACKEND_URL;
+   const backendUrl = import.meta.env.VITE_BACKEND_URL.replace(/\/+$/, '');
   const calculateAge=(dob)=>{
    const today=new Date() 
    const birthDate=new Date(dob)

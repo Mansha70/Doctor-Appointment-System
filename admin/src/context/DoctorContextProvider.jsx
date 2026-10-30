@@ -3,7 +3,7 @@ import { DoctorContext } from './DoctorContext';
 import {useState} from 'react'
 import { toast } from 'react-toastify';
 export const DoctorContextProvider = (props) => {
-  const backendUrl=import.meta.env.VITE_BACKEND_URL 
+  const backendUrl=import.meta.env.VITE_BACKEND_URL.replace(/\/+$/, '')
   const [dToken,setDToken]=useState(localStorage.getItem('dToken') || '')
   const [appointments,setAppointments]=useState([])
    const [dashData,setDashData]=useState(false)
